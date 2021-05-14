@@ -1,0 +1,18 @@
+Without preprocessing, we would end up with highly errorneous output, or inaccurate output in OCR. 
+Some techniques include
+1) Binarization
+2) Skew Correction
+3) Noise Removal
+4) Thinning and Skeletonization
+Binarization: In layman’s terms Binarization means converting a coloured image into an image which consists of only black and white pixels (Black pixel value=0 and White pixel value=255). As a basic rule, this can be done by fixing a threshold (normally threshold=127, as it is exactly half of the pixel range 0–255). If the pixel value is greater than the threshold, it is considered as a white pixel, else considered as a black pixel. 
+2. Skew Correction: While scanning a document, it might be slightly skewed (image aligned at a certain angle with horizontal) sometimes. While extracting the information from the scanned image, detecting & correcting the skew is crucial.
+Several techniques are used for skew correction.
+→ Projection profile method
+→ Hough transformation method
+→ Topline method
+→ Scanline method
+3. Noise Removal: The main objective of the Noise removal stage is to smoothen the image by removing small dots/patches which have high intensity than the rest of the image. Noise removal can be performed for both Coloured and Binary images.
+One way of performing Noise removal by using OpenCV fastNlMeansDenoisingColored function.
+4. Thinning and Skeletonization: This is an optional preprocessing task which depends on the context in which the OCR is being used.
+→ If we are using the OCR system for the printed text, No need of performing this task because the printed text always has a uniform stroke width.
+→ If we are using the OCR system for handwritten text, this task has to be performed since different writers have a different style of writing and hence different stroke width. So to make the width of strokes uniform, we have to perform Thinning and Skeletonization.
