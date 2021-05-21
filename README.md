@@ -6,16 +6,24 @@ This involves, extensive preprosessing of data, finding the boundaries and extra
 
 The steps involved are 
 1. Image preprocessing
+
   1.1 Segmentation 
+  
   1.2 increasing contrast and shrapness 
+  
   1.3 Setting up threshold(otsu's method(preferably))
 
 2. Text recognition 
+
  2.1 Vision API 
+ 
  2.2 Pytesseract or Keras-OCR
 
 3. Text storage 
+
   3.1 Pandas dataframe to csv 
+  
     3.1.1 Converting the dataframe to numpy array 
+    
     3.1.2 Converting numpy array to csv(as the data is irregular)
  
